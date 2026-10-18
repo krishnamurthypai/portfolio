@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Krishnamurthy Pai | Product Engineer</title>
+<meta name="description" content="Krishnamurthy Pai is a product engineer building high-volume fintech systems with Java, Spring Boot, React and AWS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F6F8FA;
+  --surface: #FFFFFF;
+  --ink: #0F1B2D;
+  --muted: #526173;
+  --line: #D5DDE6;
+  --accent: #1F43C4;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E3E9FB;
+  --ok: #0D7F70;
+  --font: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C1626;
+    --surface: #111F33;
+    --ink: #E8EEF6;
+    --muted: #9FB0C4;
+    --line: #24344B;
+    --accent: #86A2FF;
+    --accent-ink: #0C1626;
+    --accent-soft: #1A2B52;
+    --ok: #4FD1BD;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0C1626;
+  --surface: #111F33;
+  --ink: #E8EEF6;
+  --muted: #9FB0C4;
+  --line: #24344B;
+  --accent: #86A2FF;
+  --accent-ink: #0C1626;
+  --accent-soft: #1A2B52;
+  --ok: #4FD1BD;
+  color-scheme: dark;
+}
+
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Header */
+header.top { padding: 1.25rem 0; border-bottom: 1px solid var(--line); background: var(--surface); }
+header.top .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.mark { font-weight: 600; color: var(--ink); text-decoration: none; }
+nav a { color: var(--muted); text-decoration: none; margin-left: 1.5rem; font-size: 0.95rem; }
+nav a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Hero */
+.hero { padding: 4rem 0 3rem; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; letter-spacing: -0.015em; font-weight: 600; margin: 0 0 0.5rem; }
+.role-line { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.5rem; }
+.summary { max-width: 64ch; font-size: 1.05rem; margin: 0 0 2rem; }
+.actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.btn { display: inline-block; padding: 0.7rem 1.3rem; border-radius: 6px; font-weight: 500; text-decoration: none; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.secondary { color: var(--accent); background: transparent; }
+.btn:hover { filter: brightness(1.1); }
+
+.facts { list-style: none; margin: 0; padding: 1.5rem 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.facts strong { display: block; font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
+.facts span { color: var(--muted); font-size: 0.92rem; }
+
+/* Sections */
+section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+h2 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; margin: 0 0 1.75rem; }
+.split { display: grid; grid-template-columns: 1fr 3fr; gap: 1.5rem 3rem; }
+.split > h2 { margin: 0; }
+
+/* Experience */
+.job h3 { font-size: 1.15rem; font-weight: 600; margin: 0; }
+.job .meta { color: var(--muted); margin: 0.15rem 0 1rem; }
+.job ul { margin: 0; padding-left: 1.2rem; max-width: 68ch; }
+.job li { margin-bottom: 0.6rem; }
+.job + .job { margin-top: 2.25rem; padding-top: 2.25rem; border-top: 1px solid var(--line); }
+
+/* Projects */
+.projects { list-style: none; margin: 0; padding: 0; }
+.projects li { padding: 1.4rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr 2.4fr; gap: 0.4rem 2rem; }
+.projects li:first-child { padding-top: 0; }
+.projects li:last-child { border-bottom: 0; padding-bottom: 0; }
+.projects h3 { font-size: 1.05rem; font-weight: 600; margin: 0; }
+.projects p { margin: 0 0 0.4rem; max-width: 64ch; }
+.tags { color: var(--muted); font-size: 0.92rem; }
+
+/* Journey diagram */
+.journey { margin: 0; }
+.journey-note { color: var(--muted); margin: 0 0 1.25rem; max-width: 62ch; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.flow li { position: relative; padding-right: 1rem; }
+.flow li:not(:last-child)::after { content: ""; position: absolute; top: 1.3rem; left: 3rem; right: 0.25rem; height: 2px; background: var(--line); }
+.flow li:not(:last-child).done::after { background: var(--accent); }
+.node { position: relative; z-index: 1; display: block; width: 100%; text-align: left; background: none; border: 0; padding: 0; cursor: pointer; color: inherit; font: inherit; }
+.dot { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 2px solid var(--line); background: var(--surface); font-weight: 600; color: var(--muted); transition: background .25s, border-color .25s, color .25s; }
+.node[aria-pressed="true"] .dot { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.flow li.done .dot { border-color: var(--accent); color: var(--accent); }
+.flow li.done .node[aria-pressed="true"] .dot { color: var(--accent-ink); }
+.node-name { display: block; margin-top: 0.55rem; font-weight: 500; }
+.detail { margin-top: 1.5rem; padding: 1.1rem 1.4rem; background: var(--accent-soft); border-radius: 8px; max-width: 62ch; min-height: 5rem; }
+.detail p { margin: 0; }
+.detail .state { color: var(--ok); font-weight: 500; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem 2rem; margin: 0; }
+.skills dt { font-weight: 600; }
+.skills dd { margin: 0.1rem 0 0; color: var(--muted); }
+
+/* Contact */
+.contact p { max-width: 56ch; margin: 0 0 1.5rem; color: var(--muted); }
+.contact .actions { margin-bottom: 0; }
+
+footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.92rem; border-top: 1px solid var(--line); }
+
+@media (max-width: 760px) {
+  .hero { padding: 2.5rem 0 2.5rem; }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .split, .projects li { grid-template-columns: 1fr; }
+  .skills { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; gap: 1.1rem; }
+  .flow li { padding-right: 0; }
+  .flow li:not(:last-child)::after { display: none; }
+  .node { display: flex; align-items: center; gap: 0.9rem; }
+  .node-name { margin-top: 0; }
+  nav a { margin: 0 1rem 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .dot { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Krishnamurthy Pai</a>
+    <nav aria-label="Primary">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Krishnamurthy Pai</h1>
+    <p class="role-line">Product Engineer, full-stack (Java, Spring Boot, React)</p>
+    <p class="summary">I build high-volume fintech systems for lending and collections. Over three years I have delivered end-to-end modules for payments, legal notices, communications and loan settlements, and I currently lead a development pod.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:krishnamurthypai47@gmail.com">Email me</a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/krishnamurthy-pai0635ba195">LinkedIn</a>
+    </div>
+    <ul class="facts">
+      <li><strong>1,000/sec</strong><span>Requests handled by a payments Lambda layer</span></li>
+      <li><strong>10,000</strong><span>Legal notices generated and sent in one run</span></li>
+      <li><strong>10,000 in 2 min</strong><span>Messages processed on Lambda and SQS</span></li>
+      <li><strong>127</strong><span>Production bugs resolved in war rooms</span></li>
+    </ul>
+  </div>
+
+  <section id="experience">
+    <div class="wrap split">
+      <h2>Experience</h2>
+      <div>
+        <div class="job">
+          <h3>Product Engineer, CreditNirvana (a Perfios company)</h3>
+          <p class="meta">June 2023 to present. Fintech debt-collections software.</p>
+          <ul>
+            <li>Work directly with clients to understand their problems, then design and deliver scalable solutions from requirements and architecture through to production.</li>
+            <li>Lead a development pod: own delivery, mentor engineers and ship complete product modules on time.</li>
+            <li>Develop Spring Boot microservices, integrate external REST services and vendors, and build reusable React components.</li>
+            <li>Designed event-driven workflows on AWS Lambda and SQS for asynchronous processing at scale.</li>
+            <li>Joined critical-issue war rooms for four lenders and helped resolve 127 production bugs under tight deadlines.</li>
+            <li>Won first place among 30 teams at a 48-hour company-wide hackathon (2023 to 2024).</li>
+          </ul>
+        </div>
+        <div class="job">
+          <h3>Bachelor of Engineering, Information Science</h3>
+          <p class="meta">Canara Engineering College, 2019 to 2023</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap split">
+      <h2>Projects</h2>
+      <ul class="projects">
+        <li>
+          <h3>ORCA AI</h3>
+          <div>
+            <p>A journey orchestration engine for two large lenders. It coordinates workflows, communication channels and cross-module interactions into configurable, end-to-end customer journeys. I architected it.</p>
+            <span class="tags">Java, Spring Boot, microservices</span>
+          </div>
+        </li>
+        <li>
+          <h3>Payment integration</h3>
+          <div>
+            <p>End-to-end payments for a fintech client using Razorpay and the client’s own gateway: payment tracking, receipt generation and real-time account status updates. I designed the AWS Lambda layer that handles 1,000 requests per second.</p>
+            <span class="tags">AWS Lambda, API Gateway, Java</span>
+          </div>
+        </li>
+        <li>
+          <h3>Legal notice module</h3>
+          <div>
+            <p>Notice generation and dispatch for several lenders and asset reconstruction companies. A single run generates and sends 10,000 notices.</p>
+            <span class="tags">Java, Spring Boot</span>
+          </div>
+        </li>
+        <li>
+          <h3>Loan settlement module</h3>
+          <div>
+            <p>Lets banks and financial institutions settle loan accounts, including NPA accounts, through configurable workflows built on Flowable.</p>
+            <span class="tags">Flowable, Spring Boot</span>
+          </div>
+        </li>
+        <li>
+          <h3>Digital communication</h3>
+          <div>
+            <p>Integrates WhatsApp, SMS and email vendor APIs to automate payment reminders, missed-due-date alerts and early-warning notifications across channels.</p>
+            <span class="tags">Java, REST integrations</span>
+          </div>
+        </li>
+        <li>
+          <h3>Drill-down dashboard</h3>
+          <div>
+            <p>Backend APIs and a React UI that follow a client’s organizational hierarchy. Managers can analyze case allocation and performance for any level or individual.</p>
+            <span class="tags">React, Spring Boot, Oracle</span>
+          </div>
+        </li>
+        <li>
+          <h3>Bulk do-not-contact uploads</h3>
+          <div>
+            <p>A bulk upload flow that lets operations teams add large do-not-contact lists in one step, keeping outreach compliant at scale.</p>
+            <span class="tags">Spring Boot, PostgreSQL, React</span>
+          </div>
+        </li>
+        <li>
+          <h3>Reverse geocoding</h3>
+          <div>
+            <p>An integration that turns coordinates into usable addresses for collections workflows, replacing manual lookups.</p>
+            <span class="tags">Java, REST integrations, AWS</span>
+          </div>
+        </li>
+        <li>
+          <h3>Client onboarding pipeline</h3>
+          <div>
+            <p>Hackathon winner. An automated data pipeline that replaced manual setup for new clients and cut time to go-live. I designed the architecture and presented it to company leadership.</p>
+            <span class="tags">1st of 30 teams</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap split">
+      <h2>Journey orchestration</h2>
+      <figure class="journey">
+        <figcaption class="journey-note">A simplified borrower journey of the kind ORCA AI coordinates. Select a step to see what happens.</figcaption>
+        <ol class="flow" id="flow"></ol>
+        <div class="detail" aria-live="polite"><p id="detail"></p></div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap split">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <div><dt>Backend</dt><dd>Java, Spring Boot, microservices, Flowable, REST integrations</dd></div>
+        <div><dt>Data</dt><dd>Oracle, PostgreSQL</dd></div>
+        <div><dt>Cloud and messaging</dt><dd>AWS (Lambda, SQS, API Gateway, S3), Apache Kafka</dd></div>
+        <div><dt>Frontend</dt><dd>React</dd></div>
+        <div><dt>Tools</dt><dd>Git, Docker, Kubernetes (familiar), Agile and Scrum</dd></div>
+        <div><dt>AI tooling</dt><dd>GitHub Copilot, Claude Code</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap split contact">
+      <h2>Contact</h2>
+      <div>
+        <p>Open to conversations about backend engineering, orchestration systems and fintech products.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:krishnamurthypai47@gmail.com">Email me</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/krishnamurthy-pai0635ba195">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Krishnamurthy Pai, India</div>
+</footer>
+
+<script>
+(function () {
+  var steps = [
+    { name: "Trigger", text: "An event starts the journey, such as a missed EMI or an upcoming due date." },
+    { name: "Segment", text: "Rules place the borrower in a group, based on balance, history and risk." },
+    { name: "Channel", text: "The journey picks how to reach out (SMS, WhatsApp or a call) and when." },
+    { name: "Outcome", text: "The result is recorded and decides what happens next.", state: "Paid, promised or no response." }
+  ];
+  var flow = document.getElementById("flow");
+  var detail = document.getElementById("detail");
+  var buttons = [];
+  var current = 0;
+  var timer = null;
+
+  steps.forEach(function (s, i) {
+    var li = document.createElement("li");
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "node";
+    b.setAttribute("aria-pressed", "false");
+    var dot = document.createElement("span");
+    dot.className = "dot";
+    dot.textContent = String(i + 1);
+    var name = document.createElement("span");
+    name.className = "node-name";
+    name.textContent = s.name;
+    b.appendChild(dot);
+    b.appendChild(name);
+    b.addEventListener("click", function () { stop(); select(i); });
+    li.appendChild(b);
+    flow.appendChild(li);
+    buttons.push({ li: li, b: b });
+  });
+
+  function select(i) {
+    current = i;
+    buttons.forEach(function (x, k) {
+      x.b.setAttribute("aria-pressed", k === i ? "true" : "false");
+      x.li.classList.toggle("done", k < i);
+    });
+    detail.textContent = steps[i].text + (steps[i].state ? " " : "");
+    if (steps[i].state) {
+      var span = document.createElement("span");
+      span.className = "state";
+      span.textContent = steps[i].state;
+      detail.appendChild(span);
+    }
+  }
+
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  select(0);
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce) {
+    timer = setInterval(function () { select((current + 1) % steps.length); }, 2600);
+  }
+})();
+</script>
+</body>
+</html>
